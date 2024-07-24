@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Dice Roller</h1>
+        <div class="dice-container">
+            <img src="images/dice.jpg" alt="Dice Image" id="dice" class="dice-img">
+        </div>
+        <button type="button" onclick="rollDice()" class="roll-button">Roll The Dice</button>
+    </div>
+
+    <script>
+        const diceImg = document.getElementById("dice");
+
+        function rollDice() {
+            const min = 1;
+            const max = 7;
+            const randomNumber = Math.floor(Math.random() * (max - min)) + min;
+            diceImg.src = `images/${randomNumber}.svg`;
+        }
+    </script>
+</body>
+
+</html>
